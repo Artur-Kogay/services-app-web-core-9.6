@@ -1,0 +1,27 @@
+@use '../../../scss/abstracts/mixins';
+@use '../../../scss/abstracts/variables' as *;
+
+.view-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  transition: 0.2s;
+  span::before {
+    content: 'Показать все';
+    @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+  }
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.active-view-more-btn {
+  img {
+    transform: rotate(180deg);
+  }
+  span::before {
+    content: 'Скрыть';
+    @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+  }
+}

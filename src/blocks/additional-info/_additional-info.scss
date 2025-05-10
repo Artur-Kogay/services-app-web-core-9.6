@@ -1,0 +1,40 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+
+.additional-info {
+  margin-top: 32px;
+  p {
+    @include mixins.font-property(
+      14px,
+      $font-weight-regular,
+      $text-color-black
+    );
+    line-height: 20px;
+  }
+
+  button {
+    @include mixins.flex(null, center, 9px, null);
+    margin-top: 16px;
+
+    span {
+      @include mixins.font-property(16, $font-weight-medium, $text-color-black);
+    }
+    span:last-child {
+      width: 6px;
+      height: 6px;
+      border-bottom: 2px solid $color--danger;
+      border-right: 2px solid $color--danger;
+      transform: rotate(-45deg);
+    }
+  }
+  @media screen and (max-width: $screen--md) {
+    p {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: $screen--md) {
+    p {
+      width: 50%;
+    }
+  }
+}

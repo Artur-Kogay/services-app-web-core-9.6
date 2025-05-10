@@ -1,0 +1,44 @@
+@mixin btn-tool-display-none($className, $count) {
+  @for $i from 1 through $count {
+    .#{$className}:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+
+@mixin flex($justify, $align, $gap, $direction) {
+  display: flex;
+  @if ($justify != null) {
+    justify-content: $justify;
+  }
+  @if ($align != null) {
+    align-items: $align;
+  }
+  @if ($gap != null) {
+    gap: $gap;
+  }
+  @if ($direction != null) {
+    flex-direction: $direction;
+  }
+}
+
+@mixin sizes($width, $height) {
+  @if ($width != null) {
+    width: $width;
+  }
+  @if ($height != null) {
+    height: $height;
+  }
+}
+
+@mixin font-property($size, $weight, $color) {
+  @if ($size != null) {
+    font-size: $size;
+  }
+  @if ($weight != null) {
+    font-weight: $weight;
+  }
+  @if ($color != null) {
+    color: $color;
+  }
+}

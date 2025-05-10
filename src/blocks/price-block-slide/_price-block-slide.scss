@@ -1,0 +1,57 @@
+@use '../../scss/abstracts/mixins';
+@use '../../scss/abstracts/variables' as *;
+
+.main-content-slider__repair-block-price-slide {
+  height: 200px;
+  @include mixins.flex(null, null, 16px, column);
+  padding: 16px;
+  border-radius: 6px;
+  background: $background-white-color;
+  &-info {
+    h5 {
+      @include mixins.font-property(
+        14px,
+        $font-weight-medium,
+        $text-color--gray
+      );
+    }
+    p {
+      @include mixins.font-property(
+        14px,
+        $font-weight-regular,
+        $text-color-black
+      );
+    }
+  }
+  &-tools {
+    @include mixins.flex(space-between, end, null, null);
+    h5 {
+      @include mixins.font-property(
+        14px,
+        $font-weight-medium,
+        $text-color--gray
+      );
+    }
+    p {
+      @include mixins.font-property(
+        14px,
+        $font-weight-regular,
+        $text-color-black
+      );
+    }
+    button {
+      @include mixins.flex(null, center, 17px, null);
+      @include mixins.font-property(12px, $font-weight-bold, white);
+      background-color: $color--danger;
+      padding: 4px 8px 4px 12px;
+      border-radius: 16px;
+      span:last-child {
+        width: 7px;
+        height: 7px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

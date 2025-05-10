@@ -1,0 +1,48 @@
+@use '../../scss/abstracts/mixins';
+@use '../../scss/abstracts/variables' as *;
+
+.main-content-info {
+  margin-top: 16px;
+  display: flex;
+
+  &__text {
+    @include mixins.font-property(14px, 400, $text-color-black);
+    line-height: 20px;
+
+    p:last-of-type {
+      margin-top: 18px;
+    }
+
+    .main-content-info__btn {
+      margin-top: 13px;
+      @include mixins.flex(null, center, 8px, null);
+    }
+  }
+
+  &__illustration {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media screen and (max-width: $screen--md) {
+    flex-direction: column;
+    gap: 16px;
+    &__text {
+      p:last-of-type {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen--md) {
+    gap: 32px;
+    &__illustration {
+      width: 49%;
+    }
+    &__text {
+      width: 49%;
+    }
+  }
+}

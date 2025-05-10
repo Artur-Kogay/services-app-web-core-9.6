@@ -1,0 +1,27 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+
+.main-content-slider__repair {
+  @media screen and (max-width: $screen--md) {
+    display: none;
+  }
+  .main-content-slider__repair-list {
+    margin-top: 24px;
+    display: grid;
+    gap: 32px;
+
+    @media screen and (max-width: $screen--xl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: $screen--xl) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+.main-content-slider {
+  &__title {
+    margin-top: 20px;
+  }
+}

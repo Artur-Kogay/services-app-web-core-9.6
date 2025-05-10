@@ -1,0 +1,69 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+
+.main-content-slider__repair-block {
+  padding: 20px 16px;
+  background-color: $background-white-color;
+  border-radius: 5px;
+  @include mixins.flex(space-between, center, null, null);
+
+  button {
+    @include mixins.flex(center, center, null, null);
+    @include mixins.sizes(40px, 40px);
+    border-radius: 50%;
+    border: 1px solid $color--danger;
+    transition: 0.2s;
+
+    &:hover {
+      scale: 1.2;
+      border: 2px solid $color--mint;
+      span {
+        border-color: $color--mint;
+      }
+    }
+
+    span {
+      border-bottom: 2px solid $color--danger;
+      border-right: 2px solid $color--danger;
+      transform: rotate(-45deg);
+      @include mixins.sizes(7.5px, 7.5px);
+    }
+  }
+}
+
+.main-content-slider__repair-block-technical {
+  padding: 16px;
+  background-color: $background-white-color;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  height: 160px;
+  border: 1px solid #eaeaea;
+  h4 {
+    @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+  }
+
+  button {
+    @include mixins.flex(center, center, null, null);
+    @include mixins.sizes(40px, 40px);
+    border-radius: 50%;
+    border: 1px solid $color--danger;
+    align-self: flex-end;
+    transition: 0.2s;
+
+    &:hover {
+      scale: 1.2;
+      border: 2px solid $color--mint;
+      span {
+        border-color: $color--mint;
+      }
+    }
+
+    span {
+      border-bottom: 2px solid $color--danger;
+      border-right: 2px solid $color--danger;
+      transform: rotate(-45deg);
+      @include mixins.sizes(7.5px, 7.5px);
+    }
+  }
+}

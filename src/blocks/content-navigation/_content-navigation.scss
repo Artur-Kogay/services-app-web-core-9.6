@@ -1,0 +1,17 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+@use '../buttons/content-navigation-link/content-navigation-link';
+
+.main-content-navigation {
+  margin-top: 17px;
+
+  &__links {
+    @include mixins.flex(null, center, 15px, null);
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $screen--lg) {
+      overflow-x: scroll;
+      flex-wrap: nowrap;
+    }
+  }
+}

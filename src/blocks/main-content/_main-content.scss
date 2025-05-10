@@ -1,0 +1,10 @@
+@use '../../scss/abstracts/variables' as *;
+
+.main-content {
+  @media screen and (max-width: $screen--lg) {
+    width: 100%;
+  }
+  @media screen and (min-width: $screen--lg) {
+    width: calc(100% - 320px);
+  }
+}

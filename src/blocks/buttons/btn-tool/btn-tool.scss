@@ -1,0 +1,15 @@
+@use '../../../scss/abstracts/variables' as *;
+
+.btn-tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $color--danger;
+  transition: 0.2s;
+  &:hover {
+    scale: 1.1;
+  }
+}

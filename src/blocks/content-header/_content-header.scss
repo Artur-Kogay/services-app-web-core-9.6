@@ -1,0 +1,46 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+@use '../buttons/btn-tool/btn-tool.scss';
+
+.services__content-header {
+  @include mixins.flex(space-between, center, null, null);
+  margin-top: 32px;
+
+  .services__content-title {
+    @include mixins.font-property(28px, $font-weight-bold, null);
+    padding: 0 0 0 32px;
+    position: relative;
+  }
+
+  .services__content-title::before {
+    content: '';
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background-color: $color--mint;
+    left: 0;
+    top: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+
+  .services__tools {
+    @include mixins.flex(space-between, center, 32px, null);
+    padding: 0 32px 0 0;
+
+    &-link {
+      @include mixins.flex(space-between, center, 8px, null);
+      @include mixins.font-property(
+        16px,
+        $font-weight-medium,
+        $text-color-black
+      );
+    }
+  }
+
+  @media screen and (max-width: $screen--sm) {
+    .services__tools {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use '../../scss/abstracts/mixins';
+@use '../../scss/abstracts/variables' as *;
+@use '../buttons/view-more-btn/view-more-btn';
+
+.main-content-slider {
+  margin-top: 51px;
+  &__title {
+    background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
+    padding: 16px 32px;
+    border-top: 0.5px solid $color-bright-mint;
+
+    h2 {
+      @include mixins.font-property(
+        16px,
+        $font-weight-regular,
+        $text-color--gray
+      );
+      text-transform: uppercase;
+    }
+  }
+
+  .slider-repair {
+    margin-top: 24px;
+    overflow: hidden;
+    padding-bottom: 40px;
+    position: relative;
+
+    &::before {
+      content: '';
+      z-index: 10;
+      height: 100%;
+      width: 24px;
+      background: linear-gradient(
+        270deg,
+        #f8f8f8 16.84%,
+        rgba(248, 248, 248, 0.0001) 100%
+      );
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    @media screen and (min-width: $screen--md) {
+      display: none;
+    }
+  }
+  .swiper-pagination {
+    &-bullet {
+      width: 12px;
+      height: 12px;
+      background: #dddddd;
+      &-active {
+        background-color: #b5b6bc;
+      }
+    }
+  }
+}

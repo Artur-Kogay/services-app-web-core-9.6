@@ -1,0 +1,30 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+
+.page-footer {
+  margin-top: 50px;
+  border-top: 1px solid $color-bright-mint;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 32px 33px 21px 31px;
+    align-items: center;
+    @include mixins.font-property(14px, $font-weight-medium, $text-color--gray);
+    div:last-child {
+      text-align: end;
+    }
+  }
+
+  @media screen and (max-width: $screen--md) {
+    .page-footer__content {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+      gap: 16px;
+      div:last-child {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../../scss/abstracts/mixins';
+@use '../../../scss/abstracts/variables' as *;
+
+.content-navigation-link {
+  @include mixins.font-property(16px, $font-weight-medium, $text-color--gray);
+  width: 215px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.active-content-nav-link {
+  background-color: $background-white-color;
+  border-radius: 6px;
+  border: 2px solid $color-bright-mint;
+}

@@ -1,0 +1,99 @@
+@use '../../scss/abstracts/mixins';
+@use '../../scss/abstracts/variables' as *;
+@use '../buttons/btn-tool/btn-tool.scss';
+
+.sidebar {
+  min-height: 100vh;
+  padding-top: 20px;
+  width: 0;
+  overflow: hidden;
+  background-color: $background-white-color;
+  @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+  transition: 0.2s;
+
+  &__header {
+    @include mixins.flex(space-between, center, null, null);
+    padding: 0 16px;
+  }
+
+  &__links {
+    margin-top: 25px;
+    @include mixins.flex(null, start, 24px, column);
+    @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+  }
+
+  &__link {
+    @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+    padding: 0 16px;
+  }
+
+  &__footer {
+    margin-top: 32px;
+    padding: 0 16px 32px 16px;
+    @include mixins.font-property(16px, $font-weight-medium, $text-color-black);
+
+    &-links {
+      @include mixins.flex(null, center, 16px, null);
+    }
+
+    &-links:last-child {
+      margin-top: 8px;
+    }
+
+    &-info {
+      margin-top: 16px;
+      @include mixins.font-property(
+        16px,
+        $font-weight-medium,
+        $text-color-black
+      );
+
+      h2 {
+        margin-top: 8px;
+        @include mixins.font-property(24px, 700, null);
+      }
+    }
+  }
+
+  .active-link {
+    position: relative;
+    color: $text-color--gray;
+  }
+
+  .active-link::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 100%;
+    background-color: $color--mint;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .active-lang-btn {
+    color: $text-color--gray;
+  }
+
+  @media screen and (max-width: $screen--lg) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  @media screen and (min-width: $screen--lg) {
+    position: static;
+    width: 320px;
+    .burger-menu {
+      display: none;
+    }
+  }
+}
+
+.active-sidebar {
+  width: 320px;
+  overflow: visible;
+}

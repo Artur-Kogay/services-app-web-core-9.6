@@ -1,0 +1,23 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+
+.main-content-slider__price-list {
+  padding: 23px 24px;
+  background-color: $background-white-color;
+  border-radius: 6px;
+  @media screen and (max-width: $screen--md) {
+    display: none;
+  }
+}
+
+.main-content-slider__price-list-info {
+  padding: 23px 24px;
+  @media screen and (max-width: $screen--md) {
+    display: none;
+  }
+  .main-content-slider__price-list-info-element {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @include mixins.font-property(14px, $font-weight-medium, $text-color--gray);
+  }
+}

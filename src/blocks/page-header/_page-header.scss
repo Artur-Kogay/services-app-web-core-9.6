@@ -1,0 +1,44 @@
+@use '../../scss/abstracts/variables' as *;
+@use '../../scss/abstracts/mixins';
+@use '../buttons/btn-tool/btn-tool.scss';
+@use '../buttons/burger-menu/burger-menu.scss';
+
+.page-header {
+  background: $background-white-color;
+  padding: 16px 0;
+  .page-header-content {
+    @include mixins.flex(space-between, center, null, null);
+    height: 100%;
+
+    &__divider {
+      @include mixins.sizes(2px, 32px);
+      background: $color--bright-gray;
+      border-radius: 1px;
+    }
+
+    &__side {
+      @include mixins.flex(null, center, 16px, null);
+      &-nav {
+        @include mixins.flex(null, center, 16px, null);
+      }
+    }
+
+    @media screen and (max-width: $screen--sm) {
+      &__side:first-child {
+        .page-header-content__divider {
+          display: none;
+        }
+      }
+      .page-header-content__side:last-child {
+        nav:first-child {
+          .page-header-content__side-nav {
+            @include mixins.btn-tool-display-none('btn-tool', 3);
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $screen--lg) {
+    display: none;
+  }
+}
